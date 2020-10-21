@@ -5,7 +5,7 @@
 	"main": "src/ajax.slim.js",
 	"scripts": {
 		"build": "webpack",
-		"minify": "uglifyjs --compress --mangle --output dist/ajax.slim.min.js -- src/ajax.slim.js"
+		"minify": "uglifyjs --compress --mangle --output dist/ajax.slim.min.ts -- src/ajax.slim.ts"
 	},
 	"author": "Isaac Bejarano",
 	"license": "GPL v.3",
