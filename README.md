@@ -1,7 +1,7 @@
 # ajax-slim
 Lightweight ES5-compatible XHR-based TS-coded library to make HTTP requests
 
-# TS version
+# TypeScript version
 A TS version is found in the "src" folder
 
 # ES5 version
