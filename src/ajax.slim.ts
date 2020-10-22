@@ -136,7 +136,6 @@ window.onload = () => {
 		.open(options)
 		.send(); // OR send(body)
 
-		let st = options.method.trim()
 	// 4. error handling
 	if (!new RegExp(/^(GET|POST|PUT|DELETE)$/i).test(options.method)) {
 		ajax.abort();
