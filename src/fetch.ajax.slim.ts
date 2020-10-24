@@ -55,55 +55,24 @@ btnAbort.addEventListener("click", function () {
 // AUX - Single Responsability
 function toDOM(body: object | string) {
 	let printable: string = "";
-
 	const toString = Object.prototype.toString;
 
 	if (toString.call(body) === "[object String]") printable = body as string;
-	if (toString.call(body) === "[object Object]") {
-		printable = travereseObject(body as object);
-	}
-	if (toString.call(body) === "[object Array]") {
-		printable = travereseArray(body as object[]);
+	if (toString.call(body) === "[object Object]") printable = travereseObject(body as object);
+	// if (toString.call(body) === "[object Array]") printable = travereseArray(body as object[]);
 
-		// function newFunction() {
-		// 	return 0;
-		// }
-
-		// {
-		// 	for (let obj of body) {
-		// 		outlet.innerHTML += `
-		// 		<h4>${obj["title"]}</h4>
-		// 		<p>${obj["body"]}</p>
-		// 		`;
-		// 	}
-		// }
-	}
-	// toString
+	// toString + CSS
 	outlet.innerHTML = printable;
 	outlet.classList.add("outlet-dynamic");
 }
 
-function travereseObject(body: object): string {
+function travereseObject(body: object | any): string {
 	let printable = "";
 
-	// for (let [key, value] of Object.entries(body)) {
-	// if (body.hasOwnProperty(key)) {
-	// printable += `${key}: ${value}<br/>`;
-	// }
-	// }
-	for (const key in body) {
-		// if (Object.prototype.hasOwnProperty.call(body, key)) {
-			const value = body[key];
-			printable += `<span>${key}</span>: ${value}<br/>`;
-		// }
+	for (let key in body) {
+		printable += `<span>${key}</span>: ${body[key]}<br/>`; // any
 	}
 
-	return printable;
-}
-
-function travereseArray(body: object[]): string {
-	let printable = "";
-	console.log(body[0]);
 	return printable;
 }
 

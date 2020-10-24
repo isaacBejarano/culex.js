@@ -1,5 +1,5 @@
-# ajax-slim
-Lightweight ES5-compatible XHR-based TS-coded library to make HTTP requests
+# Culex
+ES5-ready lightweight library to make HTTP requests
 
 # TypeScript version
 A TS version is found in the "src" folder

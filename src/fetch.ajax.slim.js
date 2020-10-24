@@ -50,45 +50,18 @@ function toDOM(body) {
     var toString = Object.prototype.toString;
     if (toString.call(body) === "[object String]")
         printable = body;
-    if (toString.call(body) === "[object Object]") {
+    if (toString.call(body) === "[object Object]")
         printable = travereseObject(body);
-    }
-    if (toString.call(body) === "[object Array]") {
-        printable = travereseArray(body);
-        // function newFunction() {
-        // 	return 0;
-        // }
-        // {
-        // 	for (let obj of body) {
-        // 		outlet.innerHTML += `
-        // 		<h4>${obj["title"]}</h4>
-        // 		<p>${obj["body"]}</p>
-        // 		`;
-        // 	}
-        // }
-    }
-    // toString
+    // if (toString.call(body) === "[object Array]") printable = travereseArray(body as object[]);
+    // toString + CSS
     outlet.innerHTML = printable;
     outlet.classList.add("outlet-dynamic");
 }
 function travereseObject(body) {
     var printable = "";
-    // for (let [key, value] of Object.entries(body)) {
-    // if (body.hasOwnProperty(key)) {
-    // printable += `${key}: ${value}<br/>`;
-    // }
-    // }
     for (var key in body) {
-        // if (Object.prototype.hasOwnProperty.call(body, key)) {
-        var value = body[key];
-        printable += "<span>" + key + "</span>: " + value + "<br/>";
-        // }
+        printable += "<span>" + key + "</span>: " + body[key] + "<br/>"; // any
     }
-    return printable;
-}
-function travereseArray(body) {
-    var printable = "";
-    console.log(body[0]);
     return printable;
 }
 function toConsole(body) {
