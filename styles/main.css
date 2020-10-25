@@ -1,0 +1,158 @@
+body {
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+	margin: 0 auto;
+	box-sizing: border-box;
+	overflow: scroll;
+	max-width: 768px; /* md */
+	background-color: whitesmoke;
+	box-shadow: 0 4px 9px 0px grey;
+}
+@media (min-width: 768px) {
+	body {
+		margin: 1rem auto 0;
+	}
+}
+header,
+main {
+	background-color: gainsboro;
+}
+header {
+	padding: 0 2rem;
+}
+main {
+	padding: 0 1rem 2rem;
+}
+#flex {
+	display: flex;
+	align-items: flex-start;
+	padding: 1.5rem 0 0;
+	border: 1px solid #52898b;
+	border-width: 0 0 1px 0;
+}
+hgroup {
+	color: dimgray;
+	padding: 0 1rem;
+}
+h1 {
+	margin: 0;
+	color: #52898b;
+	font-size: 3.2rem;
+}
+img {
+	width: 90px;
+	height: 100%;
+	mix-blend-mode: multiply;
+}
+hgroup {
+	padding: 1rem 0;
+}
+h2,
+h3 {
+	margin: 0;
+	padding: 0;
+}
+h2 {
+	font-size: 1.2rem;
+}
+h3 {
+	font-size: 0.9rem;
+	padding: 1rem 0;
+}
+main > p:first-child {
+	margin-top: 0;
+}
+main > p:first-child {
+	color: #52898b;
+	padding: 0 1rem;
+	font-size: 0.9rem;
+	font-weight: lighter;
+	font-style: italic;
+}
+main > p:first-child span {
+	color: dimgray;
+}
+.br {
+	display: block;
+}
+.weight-light {
+	font-weight: lighter;
+}
+.code {
+	font-family: "Courier New", Courier, monospace;
+}
+.group {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 2rem;
+}
+.group > * {
+	margin: 0.5rem;
+}
+label {
+	color: rgb(33, 144, 150);
+}
+label span {
+	margin-right: 0.2rem;
+}
+.input {
+	min-width: 245px;
+	padding: 0.7rem;
+	color: rgb(33, 144, 150);
+	border: 1px solid cadetblue;
+	border-radius: 8px;
+}
+.input:focus {
+	outline: none;
+}
+.btn {
+	padding: 0.7rem;
+	color: rgb(33, 144, 150);
+	border: 1px solid rgb(33, 144, 150);
+	border-radius: 8px;
+}
+.btn:hover {
+	cursor: pointer;
+	color: white;
+	background-color: cadetblue;
+}
+.btn:active {
+	color: rgb(33, 144, 150);
+	background-color: white;
+}
+.btn:focus {
+	outline: none;
+}
+footer {
+	padding: 1rem 0;
+	color: gainsboro;
+	background-color: cadetblue;
+	text-align: center;
+	font-size: 0.9rem;
+}
+footer span {
+	display: block;
+	border: 1px solid cadetblue;
+}
+
+/* dynamic css */
+.outlet-dynamic {
+	margin: 0;
+	padding: 1rem;
+	box-shadow: 0 4px 9px 0px grey;
+}
+#outlet {
+	list-style-type: none;
+}
+#outlet > li {
+	margin: 1rem 0;
+	padding: 1rem;
+	box-shadow: 0 2px 3px 0px grey;
+}
+#outlet > li p {
+	color: dimgray;
+	margin: 0.5rem 0;
+	display: block;
+}
+#outlet > li p span {
+	color: cadetblue;
+}

@@ -1,14 +1,14 @@
 {
-	"name": "ajax-slim.js",
-	"version": "1.0.0-beta.0",
-	"description": "Lightweight ES5-compatible XHR-based TS-coded library to make HTTP requests",
+	"name": "culex.js",
+	"version": "1.0.0-beta.2",
+	"description": "ES5-ready lightweight library to make HTTP requests",
 	"main": "src/ajax.slim.js",
 	"scripts": {
 		"build": "webpack",
-		"minify": "uglifyjs --compress --mangle --output dist/ajax.slim.min.js -- src/ajax.slim.js"
+		"minify": "uglifyjs --compress --mangle --output dist/culex.min.js -- lib/culex.js"
 	},
 	"author": "Isaac Bejarano",
-	"license": "GPL v.3",
+	"license": "GPLv3",
 	"devDependencies": {
 		"uglify-js": "^3.11.3"
 	}

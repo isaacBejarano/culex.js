@@ -4,127 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Culex</title>
-		<style>
-			body {
-				font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-				margin: 0 auto;
-				box-sizing: border-box;
-				overflow: scroll;
-				max-width: 768px; /* md */
-				background-color: silver;
-				box-shadow: 0 4px 9px 0px grey;
-			}
-			@media (min-width: 768px) {
-				body {
-					margin: 1rem auto 0;
-				}
-			}
-			header,
-			main {
-				background-color: gainsboro;
-			}
-			header {
-				padding: 0 2rem;
-			}
-			main {
-				padding: 0 1rem;
-				padding: 0 1rem 2rem;
-			}
-			h1 {
-				margin: 0;
-				color: #317185;
-				font-size: 3.2rem;
-			}
-			img {
-				width: 90px;
-				height: 100%;
-			}
-			#flex {
-				display: flex;
-				align-items: flex-start;
-				padding: 1.5rem 0 0;
-				border: 1px solid cadetblue;
-				border-width: 0 0 1px 0;
-			}
-			hgroup {
-				color: dimgray;
-				padding: 1rem;
-			}
-			p {
-				color: cadetblue;
-				padding: 0 1rem;
-				font-size: 0.9rem;
-				font-weight: lighter;
-				font-style: italic;
-			}
-			h2 {
-				font-size: 1.2rem;
-			}
-			h3 {
-				font-size: 1rem;
-			}
-			.group {
-				display: flex;
-				flex-wrap: wrap;
-				padding-bottom: 2rem;
-			}
-			.group > * {
-				margin: 0.5rem;
-			}
-			label {
-				color: rgb(33, 144, 150);
-			}
-			label span {
-				margin-right: 0.2rem;
-			}
-			.input {
-				min-width: 245px;
-				padding: 0.7rem;
-				color: rgb(33, 144, 150);
-				border: 1px solid cadetblue;
-				border-radius: 8px;
-			}
-			.btn {
-				cursor: pointer;
-				padding: 0.7rem;
-				color: rgb(33, 144, 150);
-				border: 1px solid cadetblue;
-				border-radius: 8px;
-			}
-			.bnt:hover {
-				color: gainsboro;
-				background-color: rgb(33, 144, 150);
-			}
-			.outlet-dynamic {
-				margin: 0;
-				padding: 1rem;
-				box-shadow: 0 4px 9px 0px grey;
-			}
-			#outlet {
-				color: dimgray;
-			}
-			#outlet > h4 {
-				margin: 0.5rem 0;
-			}
-			#outlet > p {
-				padding-bottom: 0;
-				margin: 0 0 2rem;
-			}
-			#outlet > span {
-				color: cadetblue;
-			}
-			footer {
-				padding: 1rem 0;
-				color: gainsboro;
-				background-color: cadetblue;
-				text-align: center;
-				font-size: 0.9rem;
-			}
-			footer span {
-				display: block;
-				border: 1px solid cadetblue;
-			}
-		</style>
+		<link rel="stylesheet" href="./styles/main.css" />
 	</head>
 
 	<body>
@@ -133,31 +13,41 @@
 				<h1>Culex</h1>
 				<img src="./assets/culex.png" alt="culex mosquito" />
 			</div>
+			<hgroup>
+				<h2>ES5 lightweight library to make HTTP requests</h2>
+				<h3>Bite restful data quick and easy like a mosquito</h3>
+			</hgroup>
 		</header>
 
 		<main>
-			<hgroup>
-				<h2>ES5-ready lightweight library to make HTTP requests</h2>
-				<h3>Bite data quick and easy, like Culex mosquito bites</h3>
-			</hgroup>
+			<p>
+				Enter some restful URL and click fetch
+				<span class="br weight-light">example of an array</span>
+				<span class="code">https://jsonplaceholder.typicode.com/posts</span>
+				<span class="br weight-light">example of an object</span>
+				<span class="code">https://api.wheretheiss.at/v1/satellites/25544</span>
+			</p>
 
-			<p>Enter some restful URL to fetch data from</p>
 			<div class="group">
 				<label for="input-url">
 					<span>URL:</span>
-					<input id="input-url" type="text" class="input" placeholder="https://jsonplaceholder.typicode.com/posts" />
+					<input id="input-url" type="text" class="input" />
 				</label>
-				<button class="btn" id="btn-fetch">fetch</button>
-				<button class="btn" id="btn-abort">abort</button>
+				<div class="btn-group">
+					<button class="btn" id="btn-fetch">fetch</button>
+					<button class="btn" id="btn-abort">abort</button>
+				</div>
 			</div>
-			<section id="outlet"></section>
+
+			<ul id="outlet"></ul>
 		</main>
 
 		<footer>
 			Released under the GPL-3.0 License
 			<span>Copyright &copy; 2020 Isaac Bejarano</span>
 		</footer>
-		<script src="src/ajax.slim.js"></script>
-		<script src="src/fetch.ajax.slim.js"></script>
+		<script src="dist/culex.min.js"></script>
+		<!-- <script src="lib/culex.js"></script> -->
+		<script src="src/fetch.js"></script>
 	</body>
 </html>
