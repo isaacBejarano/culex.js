@@ -1,28 +1,34 @@
 /*
 	
-XHttpRequest "readyState"
+XMLHttpRequest "readyState"
 			0: unset
 			1: open() is called
 			2: send() is called -> headers + status available
 			3: downloading... -> responseText holds partial data
 			4: downloading complete -> now we can maipulate data
 
-SOLID used:
-- Single Responsability
-- Interface Segregation
+SOLID:
+	-	Single Responsability
+
+NOTE: 
+	*	Culex only fetches JSON data / .responseText
+		-> .responseXML not implemented	
+
+	*	Credentials for authenticated endpoints not implemented
+		-> options { user:null, pass:null }
 
 */
 
 interface i_Options {
 	method: string;
 	url: string;
-	async?: boolean;
+	contentType?: string;
 	user?: string | null;
 	pass?: string | null;
 }
 
 class Culex {
-	public XHR: XMLHttpRequest;
+	private XHR: XMLHttpRequest;
 	// prettier-ignore
 	constructor() {
 		window.XMLHttpRequest
@@ -32,16 +38,22 @@ class Culex {
 
 	// methods ~async
 	request(options: i_Options): Culex {
-		let { method, url, async = true, user = null, pass = null } = options;
+		let { method, url, contentType, user, pass } = options;
 
-		this.XHR.open(method, url, async, user, pass);
+		if (!contentType) contentType = "application/x-www-form-urlencoded";
+		if (!user) user = null;
+		if (!pass) pass = null;
+
+		this.XHR.open(method, url, true, user, pass); // async:true
 		// console.log("request open");
 
 		// this.XHR.onprogress = function () {
 		// 	console.log("downloading from API...");
 		// };
 
-		this.XHR.send(null);
+		// this.XHR.setRequestHeader("Content-Type", contentType);;
+
+		this.XHR.send(null); // x:null if GET / x:object if POST
 
 		// this.XHR.onload = function () {
 		// 	console.log("download completed");
@@ -52,8 +64,11 @@ class Culex {
 
 	// methods ~await
 	response(callback: Function): void {
-		//
 		this.XHR.onreadystatechange = () => {
+			// HEADERS_RECEIVED
+			if (this.XHR.readyState === 2 && this.XHR.status === 200) {
+				console.log(this.XHR.getResponseHeader("Content-Type"));
+			}
 			// ERROR handling
 			if (this.XHR.readyState === 4 && this.XHR.status === 200) {
 				try {
@@ -73,8 +88,9 @@ class Culex {
 }
 
 class Printer {
-	// toDOM(data);
 	// toDOM(JSON.stringify(data));
 	// toConsole(data);
 	// toConsole(JSON.stringify(data));
+	// toAlert(JSON.stringify(data));
+	// toAlert(data);
 }

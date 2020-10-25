@@ -1,7 +1,7 @@
 {
 	"name": "culex.js",
-	"version": "1.0.0-beta.3",
-	"description": "Lightweight ES5 library to make HTTP requests",
+	"version": "1.0.0-beta.4",
+	"description": "ES5 library to fetch JSON data from RESTful APIs",
 	"main": "src/ajax.slim.js",
 	"scripts": {
 		"build": "webpack",

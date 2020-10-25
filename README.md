@@ -1,5 +1,5 @@
 # Culex
-A lightweight ES5 library to make HTTP requests
+A lightweight ES5 library to fetch JSON data from RESTful APIs
 
 # culex.ts
 The TS version is found in the "src" folder
