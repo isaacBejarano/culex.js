@@ -1,11 +1,11 @@
 {
 	"name": "culex.js",
-	"version": "1.0.0-beta.4",
+	"version": "1.0.0-beta.5",
 	"description": "ES5 library to fetch JSON data from RESTful APIs",
 	"main": "src/ajax.slim.js",
 	"scripts": {
 		"build": "webpack",
-		"minify:js": "uglifyjs --compress --mangle --output dist/culex.min.js -- lib/culex.js"
+		"minify": "uglifyjs --compress --mangle --output dist/culex.min.js -- lib/culex.js"
 	},
 	"author": "Isaac Bejarano",
 	"license": "GPLv3",

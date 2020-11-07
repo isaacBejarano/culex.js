@@ -19,7 +19,7 @@ const btnAbort = document.getElementById("btn-abort") as HTMLButtonElement;
 const outlet = document.getElementById("outlet") as HTMLElement;
 
 // 1. options -> method + url are compulsory!
-let options: i_Options = {
+let options: InterfaceOptions = {
 	method: "GET",
 	url: "",
 	// contentType: "application/x-www-form-urlencoded",
